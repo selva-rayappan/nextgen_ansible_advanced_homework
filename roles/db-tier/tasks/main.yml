@@ -38,11 +38,8 @@
 
     - name: Setup Postgres database(s)
       postgresql_db:
-        name: "{{ __database.name }}"
-        state: "{{ __database.state | default('present') }}"
-      loop: "{{ postgres_databases }}"
-      loop_control:
-        loop_var: __database
+        name: "{{ name }}"
+        state: "{{ default('present') }}"
 
     - name: Create Postgres user#(s)
       postgresql_user:
