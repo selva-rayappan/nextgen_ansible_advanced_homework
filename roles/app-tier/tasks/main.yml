@@ -6,6 +6,6 @@
 
 - name: Enable Tomcat
   service:
-    name: payload
+    name: "{{ payload }}"
     state: started
     enabled: true
