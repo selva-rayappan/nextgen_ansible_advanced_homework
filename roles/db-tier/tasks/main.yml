@@ -38,7 +38,7 @@
 
     - name: Setup Postgres database(s)
       postgresql_db:
-        name: "{{ name }}"
+        name: "{{ db }}"
         state: "{{ default('present') }}"
 
     - name: Create Postgres user#(s)
