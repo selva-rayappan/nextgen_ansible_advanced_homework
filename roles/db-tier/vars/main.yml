@@ -1,3 +1,3 @@
 # vars for posgres DB
 postgres_databases:
-  - name: db
+  - name: postgres
