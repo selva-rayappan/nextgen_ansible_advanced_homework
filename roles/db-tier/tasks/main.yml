@@ -33,13 +33,3 @@
     state: "{{ postgres_service_state | default('started') }}"
     enabled: "{{ postgres_service_enabled | default(true) }}"
 
-- name: Configure Postgres resources, user, database etc
-  block:
-
-    - name: Setup Postgres database(s)
-      postgresql_db:
-        name: "{{ __database.name }}"
-        state: "{{ __database.state | default('present') }}"
-      loop: "{{ postgres_databases }}"
-      loop_control:
-        loop_var: __database
